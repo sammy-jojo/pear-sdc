@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Your Company</title>
+    <!-- Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset & Global Styles (Copied for consistency) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            /* Light background for the whole page */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Utility Classes (Copied) */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .py-24 {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .shadow-lg {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .shadow-xl {
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Buttons (Copied) */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            /* Fully rounded */
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            /* Blue */
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Header (Copied) */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Section Titles (Copied) */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* Privacy Policy Page Specific Styles */
+        .privacy-hero {
+            background: url(images/Data-Privacy.jpg);
+            /* backdrop-filter: blur(100px); */
+            /* filter: blur(10px); */
+            /* -webkit-filter: blur(8px); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 20px;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .privacy-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .privacy-content-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: left;
+            /* Align text left for readability */
+        }
+
+        .privacy-content-inner h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content-inner h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .privacy-content-inner p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .privacy-content-inner ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .privacy-content-inner ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Call to Action Banner (Copied) */
+        .cta-banner {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            padding: 4rem 20px;
+            text-align: center;
+            border-radius: 0.75rem;
+            margin: 4rem auto;
+            max-width: 1000px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-banner h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-banner .btn {
+            background-color: #fff;
+            color: #6a11cb;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-banner .btn:hover {
+            background-color: #f0f0f0;
+            color: #4a0a9a;
+        }
+
+        /* Footer (Copied) */
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 4rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .footer-col p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #bdc3c7;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            color: #bdc3c7;
+        }
+
+        /* Responsive Design (Copied and adapted) */
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-toggle {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex !important;
+            }
+
+            .navbar {
+                flex-wrap: nowrap;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                margin-top: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .privacy-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-banner h2 {
+                font-size: 1.75rem;
+            }
+
+            .cta-banner p {
+                font-size: 1rem;
+            }
+
+            .privacy-content-inner h2 {
+                font-size: 1.75rem;
+            }
+
+            .privacy-content-inner h3 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/91d61d19-c0fc-4cdf-3ce2-b98e93610400/public"
+                        width="100" alt="Logo">
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="styles.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Privacy Policy Hero Section -->
+    <section class="privacy-hero">
+        <div class="container">
+            <!-- <h1>Privacy Policy</h1>
+             
+            <p>Your privacy is important to us. Learn how we collect, use, and protect your data.</p> -->
+        </div>
+    </section>
+
+    <!-- Privacy Policy Content Section -->
+    <section class="privacy-content py-24">
+        <div class="privacy-content-inner">
+            <p>
+                This Privacy Policy describes how Your Company ("we," "us," or "our") collects, uses, and discloses your
+                personal information when you visit our website [Your Website URL] (the "Site") and use our services.
+            </p>
+            <p>
+                By accessing or using our Site and services, you agree to the collection, use, and disclosure of your
+                information as described in this Privacy Policy. If you do not agree with the terms of this Privacy
+                Policy, please do not access or use the Site.
+            </p>
+
+            <h2>1. Information We Collect</h2>
+            <p>We collect various types of information in connection with the services we provide, including:</p>
+            <h3>Personal Information You Provide to Us:</h3>
+            <ul>
+                <li><strong>Contact Information:</strong> Such as your name, email address, postal address, and phone
+                    number when you register for an account, subscribe to our newsletter, or fill out a contact form.
+                </li>
+                <li><strong>Financial Information:</strong> If you use our financial services, we may collect financial
+                    details necessary to provide those services.</li>
+                <li><strong>Communications:</strong> Records of your correspondence with us, including emails, chat
+                    messages, and phone calls.</li>
+            </ul>
+            <h3>Information Collected Automatically:</h3>
+            <ul>
+                <li><strong>Usage Data:</strong> Information about how you interact with our Site, such as pages
+                    visited, time spent on pages, links clicked, and referring URLs.</li>
+                <li><strong>Device Information:</strong> Information about the device you use to access our Site,
+                    including IP address, browser type, operating system, and unique device identifiers.</li>
+                <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar tracking technologies
+                    to track activity on our Site and hold certain information.</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the information we collect for various purposes, including:</p>
+            <ul>
+                <li>To provide, operate, and maintain our Site and services.</li>
+                <li>To improve, personalize, and expand our Site and services.</li>
+                <li>To understand and analyze how you use our Site.</li>
+                <li>To develop new products, services, features, and functionality.</li>
+                <li>To communicate with you, including for customer service, to provide you with updates and other
+                    information relating to the Site, and for marketing and promotional purposes.</li>
+                <li>To process your transactions and manage your accounts.</li>
+                <li>To find and prevent fraud.</li>
+                <li>For compliance with legal obligations.</li>
+            </ul>
+
+            <h2>3. Disclosure of Your Information</h2>
+            <p>We may share your personal information in the following situations:</p>
+            <ul>
+                <li><strong>With Service Providers:</strong> We may share your information with third-party vendors,
+                    consultants, and other service providers who perform services on our behalf.</li>
+                <li><strong>For Business Transfers:</strong> In connection with any merger, sale of company assets,
+                    financing, or acquisition of all or a portion of our business by another company.</li>
+                <li><strong>For Legal Compliance:</strong> If required to do so by law or in response to valid requests
+                    by public authorities (e.g., a court order or a government agency request).</li>
+                <li><strong>With Your Consent:</strong> We may disclose your personal information for any other purpose
+                    with your consent.</li>
+            </ul>
+
+            <h2>4. Data Security</h2>
+            <p>We have implemented measures designed to secure your personal information from accidental loss and from
+                unauthorized access, use, alteration, and disclosure. However, the transmission of information via the
+                internet is not completely secure. Although we do our best to protect your personal information, we
+                cannot guarantee the security of your personal information transmitted to our Site. Any transmission of
+                personal information is at your own risk.</p>
+
+            <h2>5. Your Data Protection Rights</h2>
+            <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+            <ul>
+                <li>The right to access, update, or delete the information we have on you.</li>
+                <li>The right to rectify any incomplete or inaccurate information.</li>
+                <li>The right to object to our processing of your personal data.</li>
+                <li>The right to request that we restrict the processing of your personal information.</li>
+                <li>The right to data portability.</li>
+                <li>The right to withdraw consent at any time where we relied on your consent to process your personal
+                    information.</li>
+            </ul>
+            <!-- <p>To exercise any of these rights, please contact us using the contact details provided below.</p> -->
+
+            <h2>6. Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar tracking technologies to track the activity on our Site and store certain
+                information. Cookies are files with a small amount of data which may include an anonymous unique
+                identifier. You can instruct your browser to refuse all cookies or to indicate when a cookie is being
+                sent. However, if you do not accept cookies, you may not be able to use some portions of our Site.</p>
+
+            <h2>7. Changes to This Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new
+                Privacy Policy on this page and updating the "Last updated" date at the top of this Privacy Policy. You
+                are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy
+                are effective when they are posted on this page.</p>
+
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready to Transform Your Financial Future?</h2>
+            <p>Join our community and start your journey towards financial freedom today.</p>
+            <a href="contact.html" class="btn">Get Started Now</a>
+        </div>
+    </section>
+
+  <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <p>
+                    We are dedicated to empowering individuals and businesses with the knowledge and tools to achieve
+                    financial success.
+                </p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.588-1.333h2.412v-3.996h-3.29c-3.51 0-4.71 1.711-4.71 4.147v2.353z" />
+                        </svg></a>
+                    <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.594 0-6.494 2.902-6.494 6.492 0 .509.058 1.006.167 1.483-5.39-2.705-10.185-5.703-13.38-9.072-.574.98-.906 2.109-.906 3.313 0 2.278 1.159 4.287 2.919 5.465-.85-.029-1.65-.262-2.35-.618v.08c0 3.154 2.23 5.78 5.19 6.39-.544.148-1.114.237-1.703.237-.417 0-.82-.041-1.215-.116.82 2.578 3.2 4.478 6.01 4.529-2.207 1.73-4.996 2.775-8.03 2.775-.521 0-1.03-.03-1.53-.09 2.858 1.838 6.23 2.915 9.876 2.915 11.84 0 18.33-9.81 18.33-18.329 0-.279-.006-.557-.015-.836.81-.587 1.51-1.32 2.07-2.16z" />
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5 1.11-2.5 2.48-2.5 2.48 1.119 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.003-5.103 6.003 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.019-3.922v-2.747z" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>1 University Way,BIU<br>Benin City, 300102, Edo</p>
+                <!-- <p>MIS BUILDING, Osarodion St,Oka,<br>Benin City, 300102, Edo</p> -->
+                <p>Email: pearsdc@gmail.com</p>
+                <p>Phone: 0703 460 8778</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Your Company. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script>
+        // JavaScript for Mobile Navigation Toggle (Copied)
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', function () {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

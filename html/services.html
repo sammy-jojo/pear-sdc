@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Your Company</title>
+    <!-- Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset & Global Styles (Copied for consistency) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            /* Light background for the whole page */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Utility Classes (Copied) */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .py-24 {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .shadow-lg {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .shadow-xl {
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Buttons (Copied) */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            /* Fully rounded */
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            /* Blue */
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Header (Copied) */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Section Titles (Copied) */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* Services Page Specific Styles */
+        .services-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x400/1a4a6b/ffffff?text=Our+Services') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .services-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .services-overview {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .services-overview p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #444;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-categories {
+            padding: 6rem 0;
+            background-color: #e0f2f7;
+            /* Light blue background */
+        }
+
+        .service-grid {
+            /* display: grid; */
+            display: flex;
+            /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            justify-content: center;
+        }
+
+        /* Reusing program-card styling for service cards */
+        .service-card {
+            background-color: #f8f9fa;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            width: 280px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+        }
+        /* .service-card:last-child{ */
+            /* margin-left: 50%; */
+        /* } */
+
+        .service-card-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background-color: #e6f7ff;
+            /* Light blue */
+            color: #007bff;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .service-card-title {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card-description {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .why-choose-us {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background-color: #d1ecf1;
+            /* Light cyan */
+            color: #007bff;
+            margin-right: 1rem;
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-content p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Call to Action Banner (Copied) */
+        .cta-banner {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            padding: 4rem 20px;
+            text-align: center;
+            border-radius: 0.75rem;
+            margin: 4rem auto;
+            max-width: 1000px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-banner h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-banner .btn {
+            background-color: #fff;
+            color: #6a11cb;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-banner .btn:hover {
+            background-color: #f0f0f0;
+            color: #4a0a9a;
+        }
+
+        /* Footer (Copied) */
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 4rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .footer-col p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #bdc3c7;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            color: #bdc3c7;
+        }
+
+        /* Responsive Design (Copied and adapted) */
+        @media (min-width: 640px) {
+            .service-grid {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            .service-grid:nth-child(even)::after{
+                content: "<br>";
+            }
+            .feature-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 680px) {
+            .service-grid {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            .service-grid:nth-child(even)::after{
+                content: "<br>";
+            }
+            .feature-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-toggle {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex !important;
+            }
+
+            .navbar {
+                flex-wrap: nowrap;
+            }
+            
+            .service-grid {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-content: center;
+                /* margin-left: 10%; */
+            }
+            
+            .feature-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                margin-top: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+
+
+            .cta-banner h2 {
+                font-size: 1.75rem;
+            }
+
+            .cta-banner p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                   <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/91d61d19-c0fc-4cdf-3ce2-b98e93610400/public"
+                        width="100" alt="Logo">
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="styles.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Our Comprehensive Services</h1>
+            <p>Tailored solutions to meet your unique  needs.</p>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="services-overview py-24">
+        <div class="container text-center">
+            <h2 class="section-title">What We Offer</h2>
+            <p class="section-subtitle">
+                From cutting-edge network infrastructure to innovative software and hardware solutions, we deliver expert technology guidance at every stage.
+            </p>
+            <p>
+                We recognize that every business has unique challenges and objectives. That’s why we offer a comprehensive suite of services designed to provide end-to-end support for your digital transformation. Our approach combines deep technical expertise with a client-first mindset, ensuring solutions that are not just powerful but also perfectly tailored to your needs.
+            </p>
+            <p>
+                Whether you’re looking to optimize your network, deploy scalable hardware, develop custom software, or secure your IT environment, our team of seasoned professionals is ready to help. We leverage the latest technologies, industry insights, and proven methodologies to deliver seamless, future-ready solutions that drive growth and efficiency.
+            </p>
+        </div>
+    </section>
+
+    <!-- Service Categories Section -->
+    <section class="service-categories py-24">
+        <div class="container text-center">
+            <h2 class="section-title">Explore Our Service Categories</h2>
+            <p class="section-subtitle">
+                Click on any service to learn more about how we can help you.
+            </p>
+
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V9a2 2 0 100 4 2 2 0 100 4v1m-6 0h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                     <h3 class="program-card-title">Software Development</h3>
+                    <p class="program-card-description">
+                        Secure your future with comprehensive software development solutions.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="program-card-title">Networking</h3>
+                    <p class="program-card-description">
+                        we design and deploy cutting-edge networking infrastructure that keeps you ahead—scalable, agile, and built for the future.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M18 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-9-9a5.002 5.002 0 006.001 0M12 6v.01">
+                            </path>
+                        </svg>
+                    </div>
+                   <h3 class="program-card-title">Operations</h3>
+                    <p class="program-card-description">
+                        Expert guidance to help you manage your finances and plan for the future.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="program-card-title">Hardware Solutions</h3>
+                    <p class="program-card-description">
+                        Ensure your legacy is protected with thoughtful hardware solutions.
+                    </p>
+                </div>
+                <!-- <div class="service-card">
+                    <div class="service-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                            </path>
+                        </svg>
+                    </div> -->
+                    <!-- <h3 class="service-card-title">Tax Optimization</h3>
+                    <p class="service-card-description">
+                        Strategies to minimize your tax burden and maximize your returns.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.553 23.553 0 0112 15c-1.685 0-3.35-.16-4.975-.445m0 0A48.622 48.622 0 013 4V2m6 10H4.5M18 10H10m-7 0L4.5 3m11.5 5h-10m0 0v9m0-9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2v-6z">
+                            </path>
+                        </svg>
+                    </div> -->
+                    <!-- <h3 class="service-card-title">Business Consulting</h3>
+                    <p class="service-card-description">
+                        Expert advice to help your business thrive and achieve its goals.
+                    </p> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us py-24">
+        <div class="container text-center">
+            <h2 class="section-title">Why Choose Our Services?</h2>
+            <p class="section-subtitle">
+                We are committed to providing exceptional value and results for our clients.
+            </p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Expert Guidance</h3>
+                        <p>Access to a team of certified  professionals with years of experience.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Personalized Approach</h3>
+                        <p>Solutions tailored specifically to your individual situation and goals.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Transparent Fees</h3>
+                        <p>Clear and straightforward pricing with no hidden costs or surprises.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Proven Track Record</h3>
+                        <p>A history of helping clients achieve their goals and  objectives.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 13v-1m4 1v-1m4 1v-1M3 21h18M5 10V7a2 2 0 012-2h10a2 2 0 012 2v3m-2 10h-6l-2-2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v3a2 2 0 01-2 2h-3l-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Ongoing Support</h3>
+                        <p>Continuous monitoring and adjustments to your plans as your life evolves.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Cutting-Edge Tools</h3>
+                        <p>Utilizing the latest technology for efficient and effective financial management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner  -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Ready to Revolutionize Your Technology?</h2>
+            <p>Join our expert community and unlock the power of next-gen software, hardware, and networking solutions today.</p>
+            <a href="#" class="btn">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <p>
+                    We are dedicated to empowering individuals and businesses with the knowledge and tools to achieve
+                    financial success.
+                </p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.588-1.333h2.412v-3.996h-3.29c-3.51 0-4.71 1.711-4.71 4.147v2.353z" />
+                        </svg></a>
+                    <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.594 0-6.494 2.902-6.494 6.492 0 .509.058 1.006.167 1.483-5.39-2.705-10.185-5.703-13.38-9.072-.574.98-.906 2.109-.906 3.313 0 2.278 1.159 4.287 2.919 5.465-.85-.029-1.65-.262-2.35-.618v.08c0 3.154 2.23 5.78 5.19 6.39-.544.148-1.114.237-1.703.237-.417 0-.82-.041-1.215-.116.82 2.578 3.2 4.478 6.01 4.529-2.207 1.73-4.996 2.775-8.03 2.775-.521 0-1.03-.03-1.53-.09 2.858 1.838 6.23 2.915 9.876 2.915 11.84 0 18.33-9.81 18.33-18.329 0-.279-.006-.557-.015-.836.81-.587 1.51-1.32 2.07-2.16z" />
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5 1.11-2.5 2.48-2.5 2.48 1.119 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.003-5.103 6.003 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.019-3.922v-2.747z" />
+                        </svg></a>
+                </div>
+            </div>
+         <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="services.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Contact Us</h4>
+                <p>MIS BUILDING, Osarodion St,Oka,<br>Benin City, 300102, Edo</p>
+                <p>Email: pearsdc@gmail.com</p>
+                <p>Phone: 0703 460 8778</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Your Company. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Mobile Navigation Toggle (Copied)
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', function () {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
