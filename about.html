@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Your Company</title>
+    <title>About Us - Your Company</title>
     <!-- Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Basic Reset & Global Styles (Copied for consistency) */
+        /* Basic Reset & Global Styles (Copied from main canvas for consistency) */
         * {
             margin: 0;
             padding: 0;
@@ -29,7 +29,7 @@
             padding: 0 20px;
         }
 
-        /* Utility Classes (Copied) */
+        /* Utility Classes (Copied from main canvas) */
         .text-center {
             text-align: center;
         }
@@ -73,7 +73,7 @@
             box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.04);
         }
 
-        /* Buttons (Copied) */
+        /* Buttons (Copied from main canvas) */
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -97,7 +97,7 @@
             transform: translateY(-2px);
         }
 
-        /* Header (Copied) */
+        /* Header (Copied from main canvas) */
         .header {
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -152,7 +152,7 @@
             color: #333;
         }
 
-        /* Section Titles (Copied) */
+        /* Section Titles (Copied from main canvas) */
         .section-title {
             font-size: 2.5rem;
             font-weight: 800;
@@ -167,9 +167,9 @@
             margin: 0 auto 3rem auto;
         }
 
-        /* Services Page Specific Styles */
-        .services-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x400/1a4a6b/ffffff?text=Our+Services') no-repeat center center/cover;
+        /* About Page Specific Styles */
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x400/34495e/ffffff?text=About+Us') no-repeat center center/cover;
             color: #fff;
             text-align: center;
             padding: 80px 20px;
@@ -179,18 +179,18 @@
             justify-content: center;
         }
 
-        .services-hero h1 {
+        .about-hero h1 {
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
         }
 
-        .services-overview {
+        .about-content {
             padding: 6rem 0;
             background-color: #fff;
         }
 
-        .services-overview p {
+        .about-content p {
             font-size: 1.125rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
@@ -200,24 +200,28 @@
             margin-right: auto;
         }
 
-        .service-categories {
-            padding: 6rem 0;
-            background-color: #e0f2f7;
-            /* Light blue background */
-        }
-
-        .service-grid {
-            /* display: grid; */
+        .about-image {
             display: flex;
-            /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 3rem;
             justify-content: center;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
         }
 
-        /* Reusing program-card styling for service cards */
-        .service-card {
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
             background-color: #f8f9fa;
             border-radius: 0.75rem;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
@@ -227,18 +231,14 @@
             align-items: center;
             text-align: center;
             transition: all 0.3s ease;
-            width: 280px;
         }
 
-        .service-card:hover {
+        .value-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
         }
-        /* .service-card:last-child{ */
-            /* margin-left: 50%; */
-        /* } */
 
-        .service-card-icon {
+        .value-icon {
             width: 64px;
             height: 64px;
             display: flex;
@@ -246,89 +246,83 @@
             justify-content: center;
             border-radius: 9999px;
             background-color: #e6f7ff;
-            /* Light blue */
             color: #007bff;
             margin-bottom: 1.5rem;
         }
 
-        .service-card-icon svg {
+        .value-icon svg {
             width: 32px;
             height: 32px;
         }
 
-        .service-card-title {
+        .value-title {
             font-size: 1.375rem;
             font-weight: 600;
             color: #2c3e50;
             margin-bottom: 0.75rem;
         }
 
-        .service-card-description {
+        .value-description {
             color: #666;
             line-height: 1.7;
         }
 
-        .why-choose-us {
+        .team-section {
+            background-color: #e0f2f7;
             padding: 6rem 0;
-            background-color: #fff;
         }
 
-        .feature-grid {
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            text-align: left;
-            padding: 1.5rem;
-            background-color: #f8f9fa;
+        .team-member-card {
+            background-color: #fff;
             border-radius: 0.75rem;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .feature-item:hover {
+        .team-member-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .feature-icon {
-            flex-shrink: 0;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .team-member-card img {
+            width: 120px;
+            height: 120px;
             border-radius: 9999px;
-            background-color: #d1ecf1;
-            /* Light cyan */
-            color: #007bff;
-            margin-right: 1rem;
+            object-fit: cover;
+            margin: 0 auto 1rem auto;
+            border: 4px solid #007bff;
         }
 
-        .feature-icon svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .feature-content h3 {
+        .team-member-name {
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 700;
             color: #2c3e50;
             margin-bottom: 0.5rem;
         }
 
-        .feature-content p {
+        .team-member-title {
             font-size: 1rem;
             color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .team-member-bio {
+            font-size: 0.9rem;
+            color: #777;
             line-height: 1.6;
         }
 
-        /* Call to Action Banner (Copied) */
+
+        /* Call to Action Banner (Copied from main canvas) */
         .cta-banner {
             background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
             color: #fff;
@@ -364,7 +358,7 @@
             color: #4a0a9a;
         }
 
-        /* Footer (Copied) */
+        /* Footer (Copied from main canvas) */
         .footer {
             background-color: #2c3e50;
             color: #ecf0f1;
@@ -434,35 +428,14 @@
             color: #bdc3c7;
         }
 
-        /* Responsive Design (Copied and adapted) */
+        /* Responsive Design (Copied from main canvas and adapted) */
         @media (min-width: 640px) {
-            .service-grid {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-            }
-            .service-grid:nth-child(even)::after{
-                content: "<br>";
-            }
-            .feature-grid {
-                grid-template-columns: repeat(1, 1fr);
-            }
-
-            .footer-grid {
+            .values-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
-        @media (max-width: 680px) {
-            .service-grid {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-            }
-            .service-grid:nth-child(even)::after{
-                content: "<br>";
-            }
-            .feature-grid {
-                grid-template-columns: repeat(1, 1fr);
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-grid {
@@ -482,17 +455,13 @@
             .navbar {
                 flex-wrap: nowrap;
             }
-            
-            .service-grid {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                align-content: center;
-                /* margin-left: 10%; */
+
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
-            
-            .feature-grid {
-                grid-template-columns: repeat(1, 1fr);
+
+            .team-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
 
             .footer-grid {
@@ -521,10 +490,13 @@
                 text-align: center;
             }
 
-            .services-hero h1 {
+            .about-hero h1 {
                 font-size: 2rem;
             }
 
+            .section-title {
+                font-size: 2rem;
+            }
 
             .cta-banner h2 {
                 font-size: 1.75rem;
@@ -538,17 +510,17 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header  -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                   <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/91d61d19-c0fc-4cdf-3ce2-b98e93610400/public"
+                     <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/91d61d19-c0fc-4cdf-3ce2-b98e93610400/public"
                         width="100" alt="Logo">
                 </a>
                 <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
                 <ul class="nav-links">
-                    <li><a href="styles.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li> <!-- Assuming main page is index.html -->
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -557,202 +529,142 @@
         </div>
     </header>
 
-    <!-- Services Hero Section -->
-    <section class="services-hero">
+    <!-- About Us Hero Section -->
+    <section class="about-hero">
         <div class="container">
-            <h1>Our Comprehensive Services</h1>
-            <p>Tailored solutions to meet your unique  needs.</p>
+            <h1>About Our Company</h1>
+            <p>Innovating for a brighter financial future.</p>
         </div>
     </section>
 
-    <!-- Services Overview Section -->
-    <section class="services-overview py-24">
+    <!-- Our Story Section -->
+    <section class="about-content py-24">
         <div class="container text-center">
-            <h2 class="section-title">What We Offer</h2>
+            <h2 class="section-title">Our Story</h2>
             <p class="section-subtitle">
-                From cutting-edge network infrastructure to innovative software and hardware solutions, we deliver expert technology guidance at every stage.
+                Learn about our journey, our passion, and our commitment to excellence.
             </p>
             <p>
-                We recognize that every business has unique challenges and objectives. That’s why we offer a comprehensive suite of services designed to provide end-to-end support for your digital transformation. Our approach combines deep technical expertise with a client-first mindset, ensuring solutions that are not just powerful but also perfectly tailored to your needs.
+                PearSDC was established with a bold vision: to revolutionize connectivity and empower businesses with cutting-edge technology. What began as a passionate team of engineers and innovators has grown into a trusted leader in networking, software, and hardware solutions.
             </p>
             <p>
-                Whether you’re looking to optimize your network, deploy scalable hardware, develop custom software, or secure your IT environment, our team of seasoned professionals is ready to help. We leverage the latest technologies, industry insights, and proven methodologies to deliver seamless, future-ready solutions that drive growth and efficiency.
+               From the start, we believed that seamless, secure, and scalable technology should be accessible to all—driving efficiency, growth, and innovation. Today, we serve thousands of clients, from startups to enterprises, delivering high-performance networks, intelligent software, and robust hardware tailored to modern challenges.<br>
+               The future is connected—and we’re here to power it.
             </p>
-        </div>
-    </section>
-
-    <!-- Service Categories Section -->
-    <section class="service-categories py-24">
-        <div class="container text-center">
-            <h2 class="section-title">Explore Our Service Categories</h2>
-            <p class="section-subtitle">
-                Click on any service to learn more about how we can help you.
-            </p>
-
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V9a2 2 0 100 4 2 2 0 100 4v1m-6 0h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2z">
-                            </path>
-                        </svg>
-                    </div>
-                     <h3 class="program-card-title">Software Development</h3>
-                    <p class="program-card-description">
-                        Secure your future with comprehensive software development solutions.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="program-card-title">Networking</h3>
-                    <p class="program-card-description">
-                        we design and deploy cutting-edge networking infrastructure that keeps you ahead—scalable, agile, and built for the future.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M18 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-9-9a5.002 5.002 0 006.001 0M12 6v.01">
-                            </path>
-                        </svg>
-                    </div>
-                   <h3 class="program-card-title">Operations</h3>
-                    <p class="program-card-description">
-                        Expert guidance to help you manage your finances and plan for the future.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="program-card-title">Hardware Solutions</h3>
-                    <p class="program-card-description">
-                        Ensure your legacy is protected with thoughtful hardware solutions.
-                    </p>
-                </div>
-                <!-- <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
-                            </path>
-                        </svg>
-                    </div> -->
-                    <!-- <h3 class="service-card-title">Tax Optimization</h3>
-                    <p class="service-card-description">
-                        Strategies to minimize your tax burden and maximize your returns.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 13.255A23.553 23.553 0 0112 15c-1.685 0-3.35-.16-4.975-.445m0 0A48.622 48.622 0 013 4V2m6 10H4.5M18 10H10m-7 0L4.5 3m11.5 5h-10m0 0v9m0-9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2v-6z">
-                            </path>
-                        </svg>
-                    </div> -->
-                    <!-- <h3 class="service-card-title">Business Consulting</h3>
-                    <p class="service-card-description">
-                        Expert advice to help your business thrive and achieve its goals.
-                    </p> -->
-                </div>
+            <div class="about-image">
+                <img src="https://placehold.co/800x450/c0d9e7/1a4a6b?text=Our+Team+Working" alt="Our Team Working">
             </div>
+            <p>
+                We believe in transparency, education, and personalized solutions. Our team of experts is committed to
+                understanding your unique circumstances and crafting strategies that align with your goals, whether
+                you're planning for retirement, investing for growth, or managing your daily finances.
+            </p>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us py-24">
+    <!-- Our Values Section -->
+    <section class="programs-services py-24"> <!-- Reusing styling from programs-services -->
         <div class="container text-center">
-            <h2 class="section-title">Why Choose Our Services?</h2>
+            <h2 class="section-title">Our Core Values</h2>
             <p class="section-subtitle">
-                We are committed to providing exceptional value and results for our clients.
+                The principles that guide our actions and define who we are.
             </p>
 
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <div class="feature-content">
-                        <h3>Expert Guidance</h3>
-                        <p>Access to a team of certified  professionals with years of experience.</p>
-                    </div>
+                    <h3 class="value-title">Integrity</h3>
+                    <p class="value-description">
+                        Upholding the highest ethical standards in all our interactions and advice.
+                    </p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="value-card">
+                    <div class="value-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                            </path>
                         </svg>
                     </div>
-                    <div class="feature-content">
-                        <h3>Personalized Approach</h3>
-                        <p>Solutions tailored specifically to your individual situation and goals.</p>
-                    </div>
+                    <h3 class="value-title">Client-Centricity</h3>
+                    <p class="value-description">
+                        Placing our clients' needs and goals at the heart of everything we do.
+                    </p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Transparent Fees</h3>
-                        <p>Clear and straightforward pricing with no hidden costs or surprises.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="value-card">
+                    <div class="value-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <div class="feature-content">
-                        <h3>Proven Track Record</h3>
-                        <p>A history of helping clients achieve their goals and  objectives.</p>
-                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-description">
+                        Continuously seeking new and better ways to serve our clients and the market.
+                    </p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="value-card">
+                    <div class="value-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8 13v-1m4 1v-1m4 1v-1M3 21h18M5 10V7a2 2 0 012-2h10a2 2 0 012 2v3m-2 10h-6l-2-2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v3a2 2 0 01-2 2h-3l-2 2z">
                             </path>
                         </svg>
                     </div>
-                    <div class="feature-content">
-                        <h3>Ongoing Support</h3>
-                        <p>Continuous monitoring and adjustments to your plans as your life evolves.</p>
-                    </div>
+                    <h3 class="value-title">Excellence</h3>
+                    <p class="value-description">
+                        Striving for the highest quality in our services and professional conduct.
+                    </p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Cutting-Edge Tools</h3>
-                        <p>Utilizing the latest technology for efficient and effective financial management.</p>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="team-section py-24">
+        <div class="container text-center">
+            <h2 class="section-title">Meet Our Leadership Team</h2>
+            <p class="section-subtitle">
+                Our dedicated team of experts is here to guide you every step of the way.
+            </p>
+
+            <div class="team-grid">
+                <div class="team-member-card">
+                    <img src="images/comp6.jpg" alt="Mr Manny">
+                    <h3 class="team-member-name">Mr Manny</h3>
+                    <p class="team-member-title">CEO </p>
+                    <p class="team-member-bio">
+                        Mr Manny is responsible for making high level decisions and setting the overall direction of the organisation
+                    </p>
+                </div>
+                <div class="team-member-card">
+                    <img src="images/comp5.jpg" alt="Osemwekha Deborah">
+                    <h3 class="team-member-name">Osemwekha Deborah</h3>
+                    <p class="team-member-title">Human Resource Management</p>
+                    <p class="team-member-bio">
+                         Miss Deborah manages employee recruitment, development, compliance, and workplace culture to align workforce performance with business goals.
+                    </p>
+                </div>
+                <div class="team-member-card">
+                    <img src="images/comp7.jpg" alt="Joel Nwamu">
+                    <h3 class="team-member-name">Joel Nwanu</h3>
+                    <p class="team-member-title">Chief Technical Officer. </p>
+                    <p class="team-member-bio">
+                          Mr Joel is dedicated to fostering strong client relationships and ensuring satisfaction.
+                    </p>
+                </div>
+                <div class="team-member-card">
+                    <img src="images/comp4.jpg" alt="Andrew Enolodowanyi">
+                    <h3 class="team-member-name">Andrew Walter</h3>
+                    <p class="team-member-title">Project Lead</p>
+                    <p class="team-member-bio">
+                        Mr Andrew is dedicated to fostering strong client relationships and ensuring satisfaction.
+                    </p>
                 </div>
             </div>
         </div>
@@ -767,7 +679,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer  -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col">
@@ -794,7 +706,7 @@
                         </svg></a>
                 </div>
             </div>
-         <div class="footer-col">
+            <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -808,14 +720,14 @@
                 <ul>
                     <li><a href="faq.html">FAQs</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="services.html">Terms of Service</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-              <h4>Contact Us</h4>
-                <p>MIS BUILDING, Osarodion St,Oka,<br>Benin City, 300102, Edo</p>
-                <p>Email: pearsdc@gmail.com</p>
-                <p>Phone: 0703 460 8778</p>
+                <h4>Contact Us</h4>
+                <p>123 Financial St, Suite 400<br>Business City, BC 12345</p>
+                <p>Email: info@yourcompany.com</p>
+                <p>Phone: (123) 456-7890</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -824,7 +736,7 @@
     </footer>
 
     <script>
-        // JavaScript for Mobile Navigation Toggle (Copied)
+        // JavaScript for Mobile Navigation Toggle 
         document.addEventListener('DOMContentLoaded', function () {
             const navToggle = document.querySelector('.nav-toggle');
             const navLinks = document.querySelector('.nav-links');

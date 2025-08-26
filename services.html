@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Your Company</title>
+    <title>Services - Your Company</title>
     <!-- Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -167,9 +167,9 @@
             margin: 0 auto 3rem auto;
         }
 
-        /* Contact Page Specific Styles */
-        .contact-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x400/1d3557/ffffff?text=Contact+Us') no-repeat center center/cover;
+        /* Services Page Specific Styles */
+        .services-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x400/1a4a6b/ffffff?text=Our+Services') no-repeat center center/cover;
             color: #fff;
             text-align: center;
             padding: 80px 20px;
@@ -179,36 +179,66 @@
             justify-content: center;
         }
 
-        .contact-hero h1 {
+        .services-hero h1 {
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
         }
 
-        .contact-info-section {
+        .services-overview {
             padding: 6rem 0;
             background-color: #fff;
         }
 
-        .contact-info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
+        .services-overview p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #444;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .contact-detail-card {
+        .service-categories {
+            padding: 6rem 0;
+            background-color: #e0f2f7;
+            /* Light blue background */
+        }
+
+        .service-grid {
+            /* display: grid; */
+            display: flex;
+            /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            justify-content: center;
+        }
+
+        /* Reusing program-card styling for service cards */
+        .service-card {
             background-color: #f8f9fa;
             border-radius: 0.75rem;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
             padding: 2rem;
-            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            width: 280px;
         }
 
-        .contact-detail-card .icon {
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+        }
+        /* .service-card:last-child{ */
+            /* margin-left: 50%; */
+        /* } */
+
+        .service-card-icon {
             width: 64px;
             height: 64px;
             display: flex;
@@ -216,132 +246,86 @@
             justify-content: center;
             border-radius: 9999px;
             background-color: #e6f7ff;
+            /* Light blue */
             color: #007bff;
             margin-bottom: 1.5rem;
         }
 
-        .contact-detail-card .icon svg {
+        .service-card-icon svg {
             width: 32px;
             height: 32px;
         }
 
-        .contact-detail-card h3 {
+        .service-card-title {
             font-size: 1.375rem;
             font-weight: 600;
             color: #2c3e50;
             margin-bottom: 0.75rem;
         }
 
-        .contact-detail-card p,
-        .contact-detail-card a {
-            font-size: 1.1rem;
+        .service-card-description {
             color: #666;
-            text-decoration: none;
-            margin-bottom: 0.5rem;
+            line-height: 1.7;
         }
 
-        .contact-detail-card a:hover {
-            color: #007bff;
-        }
-
-        .contact-form-section {
+        .why-choose-us {
             padding: 6rem 0;
-            background-color: #e0f2f7;
-            /* Light blue background */
-        }
-
-        .contact-form-container {
-            max-width: 800px;
-            margin: 0 auto;
             background-color: #fff;
-            padding: 3rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-form-container form {
+        .feature-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .form-group label {
-            display: inline-block;
-            width: 150px;
-            text-align: left;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            margin-right: 1rem;
-            color: #333;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .form-group input[type="text"]:focus,
-        .form-group input[type="email"]:focus,
-        .form-group textarea:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-            outline: none;
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .contact-form-container button[type="submit"] {
-            width: 100%;
-            padding: 15px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 9999px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .contact-form-container button[type="submit"]:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
-
-        .map-section {
-            padding: 6rem 0;
-            background-color: #fff;
-        }
-
-        .map-container {
-            width: 100%;
-            height: 450px;
-            border-radius: 0.75rem;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
 
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background-color: #d1ecf1;
+            /* Light cyan */
+            color: #007bff;
+            margin-right: 1rem;
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-content p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
         }
 
         /* Call to Action Banner (Copied) */
@@ -452,8 +436,33 @@
 
         /* Responsive Design (Copied and adapted) */
         @media (min-width: 640px) {
-            .contact-info-grid {
+            .service-grid {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            .service-grid:nth-child(even)::after{
+                content: "<br>";
+            }
+            .feature-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 680px) {
+            .service-grid {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            .service-grid:nth-child(even)::after{
+                content: "<br>";
+            }
+            .feature-grid {
+                grid-template-columns: repeat(1, 1fr);
             }
 
             .footer-grid {
@@ -473,9 +482,17 @@
             .navbar {
                 flex-wrap: nowrap;
             }
-
-            .contact-info-grid {
-                grid-template-columns: repeat(3, 1fr);
+            
+            .service-grid {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-content: center;
+                /* margin-left: 10%; */
+            }
+            
+            .feature-grid {
+                grid-template-columns: repeat(1, 1fr);
             }
 
             .footer-grid {
@@ -504,13 +521,10 @@
                 text-align: center;
             }
 
-            .contact-hero h1 {
+            .services-hero h1 {
                 font-size: 2rem;
             }
 
-            .section-title {
-                font-size: 2rem;
-            }
 
             .cta-banner h2 {
                 font-size: 1.75rem;
@@ -529,12 +543,12 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                       <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/91d61d19-c0fc-4cdf-3ce2-b98e93610400/public"
+                   <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/91d61d19-c0fc-4cdf-3ce2-b98e93610400/public"
                         width="100" alt="Logo">
                 </a>
                 <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
                 <ul class="nav-links">
-                    <li><a href="styles.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -543,114 +557,203 @@
         </div>
     </header>
 
-    <!-- Contact Hero Section -->
-    <section class="contact-hero">
+    <!-- Services Hero Section -->
+    <section class="services-hero">
         <div class="container">
-            <h1>Get in Touch</h1>
-            <p>We're here to answer your questions and help you achieve your financial goals.</p>
+            <h1>Our Comprehensive Services</h1>
+            <p>Tailored solutions to meet your unique  needs.</p>
         </div>
     </section>
 
-    <!-- Contact Information Section -->
-    <section class="contact-info-section py-24">
+    <!-- Services Overview Section -->
+    <section class="services-overview py-24">
         <div class="container text-center">
-            <h2 class="section-title">Reach Out to Us</h2>
+            <h2 class="section-title">What We Offer</h2>
             <p class="section-subtitle">
-                Connect with our team through various channels.
+                From cutting-edge network infrastructure to innovative software and hardware solutions, we deliver expert technology guidance at every stage.
+            </p>
+            <p>
+                We recognize that every business has unique challenges and objectives. That’s why we offer a comprehensive suite of services designed to provide end-to-end support for your digital transformation. Our approach combines deep technical expertise with a client-first mindset, ensuring solutions that are not just powerful but also perfectly tailored to your needs.
+            </p>
+            <p>
+                Whether you’re looking to optimize your network, deploy scalable hardware, develop custom software, or secure your IT environment, our team of seasoned professionals is ready to help. We leverage the latest technologies, industry insights, and proven methodologies to deliver seamless, future-ready solutions that drive growth and efficiency.
+            </p>
+        </div>
+    </section>
+
+    <!-- Service Categories Section -->
+    <section class="service-categories py-24">
+        <div class="container text-center">
+            <h2 class="section-title">Explore Our Service Categories</h2>
+            <p class="section-subtitle">
+                Click on any service to learn more about how we can help you.
             </p>
 
-            <div class="contact-info-grid">
-                <div class="contact-detail-card">
-                    <div class="icon">
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-card-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V9a2 2 0 100 4 2 2 0 100 4v1m-6 0h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2z">
                             </path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </div>
-                    <h3>Our Office</h3>
-                    <p>1 University Way,BIU </p>
-                    <p>Benin City, 300102, Edo</p>
-                    <a href="https://maps.app.goo.gl/bSaZAMMzbiU4b1Af9" target="_blank">View on Map</a>
+                     <h3 class="program-card-title">Software Development</h3>
+                    <p class="program-card-description">
+                        Secure your future with comprehensive software development solutions.
+                    </p>
                 </div>
-                <div class="contact-detail-card">
-                    <div class="icon">
+                <div class="service-card">
+                    <div class="service-card-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 8l7.893 5.262c.732.488 1.703.488 2.435 0L21 8m-17 4v7a2 2 0 002 2h14a2 2 0 002-2v-7M4 8l7.893 5.262c.732.488 1.703.488 2.435 0L21 8m-17 4v7a2 2 0 002 2h14a2 2 0 002-2v-7">
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
                             </path>
                         </svg>
                     </div>
-                    <h3>Email Us</h3>
-                    <p>General Inquiries:</p>
-                    <a href="mailto:info@yourcompany.com">pearsdc@gmail.com</a>
-                    <p>Support:</p>
-                    <a href="mailto:support@yourcompany.com">pearsdc@gmail.com</a>
+                    <h3 class="program-card-title">Networking</h3>
+                    <p class="program-card-description">
+                        we design and deploy cutting-edge networking infrastructure that keeps you ahead—scalable, agile, and built for the future.
+                    </p>
                 </div>
-                <div class="contact-detail-card">
-                    <div class="icon">
+                <div class="service-card">
+                    <div class="service-card-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.135a11.042 11.042 0 005.516 5.516l1.135-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M18 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-9-9a5.002 5.002 0 006.001 0M12 6v.01">
                             </path>
                         </svg>
                     </div>
-                    <h3>Call Us</h3>
-                    <p>Main Line:</p>
-                    <a href="tel:+2347034608778">0703 460 8778</a>
-                    <p>Phone:</p>
-                    <a href="tel:+2347034608778">0703 460 8778</a>
+                   <h3 class="program-card-title">Operations</h3>
+                    <p class="program-card-description">
+                        Expert guidance to help you manage your finances and plan for the future.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="program-card-title">Hardware Solutions</h3>
+                    <p class="program-card-description">
+                        Ensure your legacy is protected with thoughtful hardware solutions.
+                    </p>
+                </div>
+                <!-- <div class="service-card">
+                    <div class="service-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                            </path>
+                        </svg>
+                    </div> -->
+                    <!-- <h3 class="service-card-title">Tax Optimization</h3>
+                    <p class="service-card-description">
+                        Strategies to minimize your tax burden and maximize your returns.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.553 23.553 0 0112 15c-1.685 0-3.35-.16-4.975-.445m0 0A48.622 48.622 0 013 4V2m6 10H4.5M18 10H10m-7 0L4.5 3m11.5 5h-10m0 0v9m0-9a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2v-6z">
+                            </path>
+                        </svg>
+                    </div> -->
+                    <!-- <h3 class="service-card-title">Business Consulting</h3>
+                    <p class="service-card-description">
+                        Expert advice to help your business thrive and achieve its goals.
+                    </p> -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="contact-form-section py-24">
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us py-24">
         <div class="container text-center">
-            <h2 class="section-title">Send Us a Message</h2>
+            <h2 class="section-title">Why Choose Our Services?</h2>
             <p class="section-subtitle">
-                Fill out the form below and we'll get back to you as soon as possible.
+                We are committed to providing exceptional value and results for our clients.
             </p>
-<!-- id="contactForm" -->
-            <div class="contact-form-container">
-                <form  action="https://formspree.io/f/mjkoydap"
-  method="POST">
-                    <div class="form-group">
-                        <label for="name">Your Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject:</label>
-                        <input type="text" id="subject" name="subject">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                    <div id="formMessage" style="margin-top: 1rem; font-weight: 600; text-align: center;"></div>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <!-- Map Section -->
-    <section class="map-section py-24">
-        <div class="container text-center">
-            <h2 class="section-title">Find Us on the Map</h2>
-            <p class="section-subtitle">
-                Visit our office during business hours.
-            </p>
-            <div class="map-container">
-                <!-- Replace with your actual Google Maps embed code -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.8425712376866!2d5.602834199999999!3d6.284415399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d1bae884f5dd%3A0xffa2229d00375cb2!2sPear%20Systems%20Development%20Company%20(PearSDC)!5e0!3m2!1sen!2sng!4v1753171406570!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Expert Guidance</h3>
+                        <p>Access to a team of certified  professionals with years of experience.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Personalized Approach</h3>
+                        <p>Solutions tailored specifically to your individual situation and goals.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Transparent Fees</h3>
+                        <p>Clear and straightforward pricing with no hidden costs or surprises.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Proven Track Record</h3>
+                        <p>A history of helping clients achieve their goals and  objectives.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 13v-1m4 1v-1m4 1v-1M3 21h18M5 10V7a2 2 0 012-2h10a2 2 0 012 2v3m-2 10h-6l-2-2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v3a2 2 0 01-2 2h-3l-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Ongoing Support</h3>
+                        <p>Continuous monitoring and adjustments to your plans as your life evolves.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Cutting-Edge Tools</h3>
+                        <p>Utilizing the latest technology for efficient and effective financial management.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -664,7 +767,7 @@
         </div>
     </section>
 
-    <!-- Footer  -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col">
@@ -691,7 +794,7 @@
                         </svg></a>
                 </div>
             </div>
-            <div class="footer-col">
+         <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -705,14 +808,14 @@
                 <ul>
                     <li><a href="faq.html">FAQs</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="services.html">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact Us</h4>
+              <h4>Contact Us</h4>
                 <p>MIS BUILDING, Osarodion St,Oka,<br>Benin City, 300102, Edo</p>
                 <p>Email: pearsdc@gmail.com</p>
-                <p>Phone: 0703 460 8778</p>>
+                <p>Phone: 0703 460 8778</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -725,43 +828,10 @@
         document.addEventListener('DOMContentLoaded', function () {
             const navToggle = document.querySelector('.nav-toggle');
             const navLinks = document.querySelector('.nav-links');
-            const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
 
             if (navToggle && navLinks) {
                 navToggle.addEventListener('click', function () {
                     navLinks.classList.toggle('active');
-                });
-            }
-
-            // Simple form submission handler
-            if (contactForm && formMessage) {
-                contactForm.addEventListener('submit', function (event) {
-                    event.preventDefault(); // Prevent actual form submission
-
-                    // Simulate form submission
-                    formMessage.style.color = 'green';
-                    formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
-                    contactForm.reset(); // Clear the form
-
-                    // You would typically send this data to a server here using fetch()
-                    // Example:
-                    // const formData = new FormData(contactForm);
-                    // fetch('/api/contact', {
-                    //     method: 'POST',
-                    //     body: formData
-                    // })
-                    // .then(response => response.json())
-                    // .then(data => {
-                    //     formMessage.style.color = 'green';
-                    //     formMessage.textContent = 'Message sent successfully!';
-                    //     contactForm.reset();
-                    // })
-                    // .catch(error => {
-                    //     formMessage.style.color = 'red';
-                    //     formMessage.textContent = 'There was an error sending your message. Please try again.';
-                    //     console.error('Error:', error);
-                    // });
                 });
             }
         });

@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Your Company</title>
+    <title>Contact Us - Your Company</title>
     <!-- Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Basic Reset & Global Styles (Copied from main canvas for consistency) */
+        /* Basic Reset & Global Styles (Copied for consistency) */
         * {
             margin: 0;
             padding: 0;
@@ -29,7 +29,7 @@
             padding: 0 20px;
         }
 
-        /* Utility Classes (Copied from main canvas) */
+        /* Utility Classes (Copied) */
         .text-center {
             text-align: center;
         }
@@ -73,7 +73,7 @@
             box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.04);
         }
 
-        /* Buttons (Copied from main canvas) */
+        /* Buttons (Copied) */
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -97,7 +97,7 @@
             transform: translateY(-2px);
         }
 
-        /* Header (Copied from main canvas) */
+        /* Header (Copied) */
         .header {
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -152,7 +152,7 @@
             color: #333;
         }
 
-        /* Section Titles (Copied from main canvas) */
+        /* Section Titles (Copied) */
         .section-title {
             font-size: 2.5rem;
             font-weight: 800;
@@ -167,9 +167,9 @@
             margin: 0 auto 3rem auto;
         }
 
-        /* About Page Specific Styles */
-        .about-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x400/34495e/ffffff?text=About+Us') no-repeat center center/cover;
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x400/1d3557/ffffff?text=Contact+Us') no-repeat center center/cover;
             color: #fff;
             text-align: center;
             padding: 80px 20px;
@@ -179,66 +179,36 @@
             justify-content: center;
         }
 
-        .about-hero h1 {
+        .contact-hero h1 {
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
         }
 
-        .about-content {
+        .contact-info-section {
             padding: 6rem 0;
             background-color: #fff;
         }
 
-        .about-content p {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #444;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .about-image {
-            display: flex;
-            justify-content: center;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.75rem;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .values-grid {
+        .contact-info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .value-card {
+        .contact-detail-card {
             background-color: #f8f9fa;
             border-radius: 0.75rem;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
             padding: 2rem;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            transition: all 0.3s ease;
         }
 
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .value-icon {
+        .contact-detail-card .icon {
             width: 64px;
             height: 64px;
             display: flex;
@@ -250,79 +220,131 @@
             margin-bottom: 1.5rem;
         }
 
-        .value-icon svg {
+        .contact-detail-card .icon svg {
             width: 32px;
             height: 32px;
         }
 
-        .value-title {
+        .contact-detail-card h3 {
             font-size: 1.375rem;
             font-weight: 600;
             color: #2c3e50;
             margin-bottom: 0.75rem;
         }
 
-        .value-description {
+        .contact-detail-card p,
+        .contact-detail-card a {
+            font-size: 1.1rem;
             color: #666;
-            line-height: 1.7;
-        }
-
-        .team-section {
-            background-color: #e0f2f7;
-            padding: 6rem 0;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .team-member-card {
-            background-color: #fff;
-            border-radius: 0.75rem;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .team-member-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .team-member-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 9999px;
-            object-fit: cover;
-            margin: 0 auto 1rem auto;
-            border: 4px solid #007bff;
-        }
-
-        .team-member-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #2c3e50;
+            text-decoration: none;
             margin-bottom: 0.5rem;
         }
 
-        .team-member-title {
-            font-size: 1rem;
-            color: #666;
+        .contact-detail-card a:hover {
+            color: #007bff;
+        }
+
+        .contact-form-section {
+            padding: 6rem 0;
+            background-color: #e0f2f7;
+            /* Light blue background */
+        }
+
+        .contact-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form-container form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
         }
 
-        .team-member-bio {
-            font-size: 0.9rem;
-            color: #777;
-            line-height: 1.6;
+        .form-group label {
+            display: inline-block;
+            width: 150px;
+            text-align: left;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-right: 1rem;
+            color: #333;
         }
 
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-        /* Call to Action Banner (Copied from main canvas) */
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form-container button[type="submit"] {
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 9999px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-form-container button[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .map-section {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Call to Action Banner (Copied) */
         .cta-banner {
             background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
             color: #fff;
@@ -358,7 +380,7 @@
             color: #4a0a9a;
         }
 
-        /* Footer (Copied from main canvas) */
+        /* Footer (Copied) */
         .footer {
             background-color: #2c3e50;
             color: #ecf0f1;
@@ -428,13 +450,9 @@
             color: #bdc3c7;
         }
 
-        /* Responsive Design (Copied from main canvas and adapted) */
+        /* Responsive Design (Copied and adapted) */
         @media (min-width: 640px) {
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .team-grid {
+            .contact-info-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -456,12 +474,8 @@
                 flex-wrap: nowrap;
             }
 
-            .values-grid {
+            .contact-info-grid {
                 grid-template-columns: repeat(3, 1fr);
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(4, 1fr);
             }
 
             .footer-grid {
@@ -490,7 +504,7 @@
                 text-align: center;
             }
 
-            .about-hero h1 {
+            .contact-hero h1 {
                 font-size: 2rem;
             }
 
@@ -510,162 +524,133 @@
 </head>
 
 <body>
-    <!-- Header  -->
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                     <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/91d61d19-c0fc-4cdf-3ce2-b98e93610400/public"
+                       <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/91d61d19-c0fc-4cdf-3ce2-b98e93610400/public"
                         width="100" alt="Logo">
                 </a>
                 <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
                 <ul class="nav-links">
-                    <li><a href="styles.html">Home</a></li> <!-- Assuming main page is index.html -->
-                    <li><a href="/html/about.html">About Us</a></li>
-                    <li><a href="/html/services.html">Services</a></li>
-                    <li><a href="/html/contact.html">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- About Us Hero Section -->
-    <section class="about-hero">
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
         <div class="container">
-            <h1>About Our Company</h1>
-            <p>Innovating for a brighter financial future.</p>
+            <h1>Get in Touch</h1>
+            <p>We're here to answer your questions and help you achieve your financial goals.</p>
         </div>
     </section>
 
-    <!-- Our Story Section -->
-    <section class="about-content py-24">
+    <!-- Contact Information Section -->
+    <section class="contact-info-section py-24">
         <div class="container text-center">
-            <h2 class="section-title">Our Story</h2>
+            <h2 class="section-title">Reach Out to Us</h2>
             <p class="section-subtitle">
-                Learn about our journey, our passion, and our commitment to excellence.
-            </p>
-            <p>
-                PearSDC was established with a bold vision: to revolutionize connectivity and empower businesses with cutting-edge technology. What began as a passionate team of engineers and innovators has grown into a trusted leader in networking, software, and hardware solutions.
-            </p>
-            <p>
-               From the start, we believed that seamless, secure, and scalable technology should be accessible to all—driving efficiency, growth, and innovation. Today, we serve thousands of clients, from startups to enterprises, delivering high-performance networks, intelligent software, and robust hardware tailored to modern challenges.<br>
-               The future is connected—and we’re here to power it.
-            </p>
-            <div class="about-image">
-                <img src="https://placehold.co/800x450/c0d9e7/1a4a6b?text=Our+Team+Working" alt="Our Team Working">
-            </div>
-            <p>
-                We believe in transparency, education, and personalized solutions. Our team of experts is committed to
-                understanding your unique circumstances and crafting strategies that align with your goals, whether
-                you're planning for retirement, investing for growth, or managing your daily finances.
-            </p>
-        </div>
-    </section>
-
-    <!-- Our Values Section -->
-    <section class="programs-services py-24"> <!-- Reusing styling from programs-services -->
-        <div class="container text-center">
-            <h2 class="section-title">Our Core Values</h2>
-            <p class="section-subtitle">
-                The principles that guide our actions and define who we are.
+                Connect with our team through various channels.
             </p>
 
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">
+            <div class="contact-info-grid">
+                <div class="contact-detail-card">
+                    <div class="icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="value-title">Integrity</h3>
-                    <p class="value-description">
-                        Upholding the highest ethical standards in all our interactions and advice.
-                    </p>
+                    <h3>Our Office</h3>
+                    <p>1 University Way,BIU </p>
+                    <p>Benin City, 300102, Edo</p>
+                    <a href="https://maps.app.goo.gl/bSaZAMMzbiU4b1Af9" target="_blank">View on Map</a>
                 </div>
-                <div class="value-card">
-                    <div class="value-icon">
+                <div class="contact-detail-card">
+                    <div class="icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                                d="M3 8l7.893 5.262c.732.488 1.703.488 2.435 0L21 8m-17 4v7a2 2 0 002 2h14a2 2 0 002-2v-7M4 8l7.893 5.262c.732.488 1.703.488 2.435 0L21 8m-17 4v7a2 2 0 002 2h14a2 2 0 002-2v-7">
                             </path>
                         </svg>
                     </div>
-                    <h3 class="value-title">Client-Centricity</h3>
-                    <p class="value-description">
-                        Placing our clients' needs and goals at the heart of everything we do.
-                    </p>
+                    <h3>Email Us</h3>
+                    <p>General Inquiries:</p>
+                    <a href="mailto:info@yourcompany.com">pearsdc@gmail.com</a>
+                    <p>Support:</p>
+                    <a href="mailto:support@yourcompany.com">pearsdc@gmail.com</a>
                 </div>
-                <div class="value-card">
-                    <div class="value-icon">
+                <div class="contact-detail-card">
+                    <div class="icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="value-title">Innovation</h3>
-                    <p class="value-description">
-                        Continuously seeking new and better ways to serve our clients and the market.
-                    </p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M8 13v-1m4 1v-1m4 1v-1M3 21h18M5 10V7a2 2 0 012-2h10a2 2 0 012 2v3m-2 10h-6l-2-2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v3a2 2 0 01-2 2h-3l-2 2z">
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.135a11.042 11.042 0 005.516 5.516l1.135-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
                             </path>
                         </svg>
                     </div>
-                    <h3 class="value-title">Excellence</h3>
-                    <p class="value-description">
-                        Striving for the highest quality in our services and professional conduct.
-                    </p>
+                    <h3>Call Us</h3>
+                    <p>Main Line:</p>
+                    <a href="tel:+2347034608778">0703 460 8778</a>
+                    <p>Phone:</p>
+                    <a href="tel:+2347034608778">0703 460 8778</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Meet the Team Section -->
-    <section class="team-section py-24">
+    <!-- Contact Form Section -->
+    <section class="contact-form-section py-24">
         <div class="container text-center">
-            <h2 class="section-title">Meet Our Leadership Team</h2>
+            <h2 class="section-title">Send Us a Message</h2>
             <p class="section-subtitle">
-                Our dedicated team of experts is here to guide you every step of the way.
+                Fill out the form below and we'll get back to you as soon as possible.
             </p>
+<!-- id="contactForm" -->
+            <div class="contact-form-container">
+                <form  action="https://formspree.io/f/mjkoydap"
+  method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                    <div id="formMessage" style="margin-top: 1rem; font-weight: 600; text-align: center;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-            <div class="team-grid">
-                <div class="team-member-card">
-                    <img src="/images/comp6.jpg" alt="Mr Manny">
-                    <h3 class="team-member-name">Mr Manny</h3>
-                    <p class="team-member-title">CEO </p>
-                    <p class="team-member-bio">
-                        Mr Manny is responsible for making high level decisions and setting the overall direction of the organisation
-                    </p>
-                </div>
-                <div class="team-member-card">
-                    <img src="/images/comp5.jpg" alt="Osemwekha Deborah">
-                    <h3 class="team-member-name">Osemwekha Deborah</h3>
-                    <p class="team-member-title">Human Resource Management</p>
-                    <p class="team-member-bio">
-                         Miss Deborah manages employee recruitment, development, compliance, and workplace culture to align workforce performance with business goals.
-                    </p>
-                </div>
-                <div class="team-member-card">
-                    <img src="/images/comp7.jpg" alt="Joel Nwamu">
-                    <h3 class="team-member-name">Joel Nwanu</h3>
-                    <p class="team-member-title">Chief Technical Officer. </p>
-                    <p class="team-member-bio">
-                          Mr Joel is dedicated to fostering strong client relationships and ensuring satisfaction.
-                    </p>
-                </div>
-                <div class="team-member-card">
-                    <img src="/images/comp4.jpg" alt="Andrew Enolodowanyi">
-                    <h3 class="team-member-name">Andrew Walter</h3>
-                    <p class="team-member-title">Project Lead</p>
-                    <p class="team-member-bio">
-                        Mr Andrew is dedicated to fostering strong client relationships and ensuring satisfaction.
-                    </p>
-                </div>
+    <!-- Map Section -->
+    <section class="map-section py-24">
+        <div class="container text-center">
+            <h2 class="section-title">Find Us on the Map</h2>
+            <p class="section-subtitle">
+                Visit our office during business hours.
+            </p>
+            <div class="map-container">
+                <!-- Replace with your actual Google Maps embed code -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.8425712376866!2d5.602834199999999!3d6.284415399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d1bae884f5dd%3A0xffa2229d00375cb2!2sPear%20Systems%20Development%20Company%20(PearSDC)!5e0!3m2!1sen!2sng!4v1753171406570!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -709,25 +694,25 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="/html/index.html">Home</a></li>
-                    <li><a href="/html/about.html">About Us</a></li>
-                    <li><a href="/html/services.html">Services</a></li>
-                    <li><a href="/html/contact.html">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="/html/faq.html">FAQs</a></li>
-                    <li><a href="/html/privacy.html">Privacy Policy</a></li>
-                    <li><a href="/html/terms.html">Terms of Service</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contact Us</h4>
-                <p>123 Financial St, Suite 400<br>Business City, BC 12345</p>
-                <p>Email: info@yourcompany.com</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>MIS BUILDING, Osarodion St,Oka,<br>Benin City, 300102, Edo</p>
+                <p>Email: pearsdc@gmail.com</p>
+                <p>Phone: 0703 460 8778</p>>
             </div>
         </div>
         <div class="footer-bottom">
@@ -736,14 +721,30 @@
     </footer>
 
     <script>
-        // JavaScript for Mobile Navigation Toggle 
+        // JavaScript for Mobile Navigation Toggle (Copied)
         document.addEventListener('DOMContentLoaded', function () {
             const navToggle = document.querySelector('.nav-toggle');
             const navLinks = document.querySelector('.nav-links');
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
 
             if (navToggle && navLinks) {
                 navToggle.addEventListener('click', function () {
                     navLinks.classList.toggle('active');
+                });
+            }
+
+            
+            if (contactForm && formMessage) {
+                contactForm.addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    
+                    formMessage.style.color = 'green';
+                    formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                    contactForm.reset(); // Clear the form
+
+                    
                 });
             }
         });
